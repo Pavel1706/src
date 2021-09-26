@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './сomponents/Rating/Rating'
-import {On_Off} from './сomponents/On&Off/On_Off';
 import {Uncontrolledaccordion} from "./сomponents/Uncontrolledaccordion/Uncontrolledaccordion";
 import {UncontrolledRating} from "./сomponents/UncontrolledRatting/UncontrolledRating";
 import {UncontrolledOn_Off} from './сomponents/UncontrolledOn/UnControlledOn_Off'
@@ -18,27 +17,26 @@ function App() {
     let [ratingValue, SetRatingValue] = useState<RatingValueType>(4)
     let [collapsedAccordion, setAccordion] = useState<boolean>(false)
     let [on, setOn] = useState<SetOnType>(false)
-    let [family, setFamily]=useState<boolean>(false)
-    let [nameValue, setNameValue]=useState<string|null>('My family')
+    let [family, setFamily] = useState<boolean>(false)
+    let [nameValue, setNameValue] = useState<string | null>('My family')
 
 
     return (
         <div className={'App'}>
-            {/*<On_Off/>*/}
             <UncontrolledOn_Off value={on} setOn={setOn}/>
             <Uncontrolledaccordion titleValue={'Menu'} setAccordion={setAccordion} value={collapsedAccordion}/>
             <Accordion titleValue={'Users'} collapsed={false} items={[{title: 'Pavel', value: 1},
                 {title: 'Dashka', value: 2},
                 {title: 'Yulya', value: 3},
                 {title: 'Romka', value: 4}]}
-            onClick={(title)=> alert(`user with ${title} will be happy`)}/>
+                       onClick={(title) => alert(`user with ${title} will be happy`)}/>
             <Select value={nameValue}
                     setNameValue={setNameValue}
                     pumpum={family}
                     setFamily={setFamily}
 
-                    items={[ {title: 'Dashka', value: 1},
-                {title: 'Yulya', value: 2},{title: 'Romka', value: 3}]}/>
+                    items={[{title: 'Dashka', value: 1},
+                        {title: 'Yulya', value: 2}, {title: 'Romka', value: 3}]}/>
 
             <Rating value={ratingValue} onClick={SetRatingValue}/>
 
