@@ -8,6 +8,7 @@ import { Accordion} from "./сomponents/accordion/Accordion";
 import {Select} from "./сomponents/Select/Select";
 import {Example1} from "./ReactMemo";
 import {DifficultCountingExample, HelpsToReactMemo} from "./UseMemo";
+import {SelectMemo} from "./сomponents/Select/SelectMemo";
 
 
 export function App() {
@@ -41,15 +42,16 @@ export function App() {
 
             <Rating value={ratingValue} onClick={SetRatingValue}/>
 
-            <Example1/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <DifficultCountingExample/>
-            <HelpsToReactMemo/>
+            {/*<Example1/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<DifficultCountingExample/>*/}
+            {/*<HelpsToReactMemo/>*/}
+            <SelectMemo />
         </div>
     )
 }
