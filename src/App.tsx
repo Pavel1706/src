@@ -4,13 +4,13 @@ import {Rating, RatingValueType} from './сomponents/Rating/Rating'
 import {Uncontrolledaccordion} from "./сomponents/Uncontrolledaccordion/Uncontrolledaccordion";
 import {UncontrolledRating} from "./сomponents/UncontrolledRatting/UncontrolledRating";
 import {UncontrolledOn_Off} from './сomponents/UncontrolledOn/UnControlledOn_Off'
-import {Accordion} from "./сomponents/accordion/Accordion";
+import { Accordion} from "./сomponents/accordion/Accordion";
 import {Select} from "./сomponents/Select/Select";
 import {Example1} from "./ReactMemo";
 import {DifficultCountingExample, HelpsToReactMemo} from "./UseMemo";
 
 
-function App() {
+export function App() {
     console.log('App rendering')
 
     type SetOnType = false | true
@@ -19,6 +19,7 @@ function App() {
     let [on, setOn] = useState<SetOnType>(false)
     let [family, setFamily] = useState<boolean>(false)
     let [nameValue, setNameValue] = useState<string | null>('My family')
+
 
 
     return (
@@ -54,4 +55,4 @@ function App() {
 }
 
 
-export default App;
+

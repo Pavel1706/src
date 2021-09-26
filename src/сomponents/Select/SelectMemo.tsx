@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState, FocusEvent} from "react";
-import {useEffect} from "react";
-import styles from './select.module.css';
+import { useEffect } from "react";
+import styles from './selectMemo.module.css';
 
 type itemType = {
     title: string
@@ -14,12 +14,13 @@ type SelectPropsType = {
     pumpum: boolean
     setNameValue: (name: string) => void
 }
-export const Select = React.memo(SelectSecret)
 
-function SelectSecret(props: SelectPropsType) {
+function SelectMemo(props: SelectPropsType) {
 
-    const [hoveredElementValue, setHoveredElement] = useState(props.value)
+    const [hoveredElementValue, setHoveredElement]=useState(props.value)
 
+      let myFamily =  [{title: 'Dashka', value: 1},
+        {title: 'Yulya', value: 2}, {title: 'Romka', value: 3}]
 
     function onItemClick(title: string) {
         props.setNameValue(title);
@@ -29,18 +30,18 @@ function SelectSecret(props: SelectPropsType) {
     const selectedItem = props.items.find(t => t.value === props.value)
     const hoveredItem = props.items.find(t => t.value === hoveredElementValue)
 
-    useEffect(() => {
+    useEffect(()=> {
         setHoveredElement(props.value)
     }, [props.value])
 
-    const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
-        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-            for (let i = 0; i < props.items.length; i++) {
-                if (props.items[i].value === hoveredElementValue) {
+    const onKeyUp = (e:KeyboardEvent<HTMLDivElement>)=> {
+        if(e.key === 'ArrowDown'|| e.key === 'ArrowUp'){
+            for(let i = 0; i < props.items.length; i++){
+                if (props.items[i].value===hoveredElementValue){
                     console.log(hoveredElementValue)
                     console.log(props.items[i].value)
-                    const pretedentElement = e.key === 'ArrowDown' ? props.items[i + 1] : props.items[i - 1]
-                    if (pretedentElement) {
+                    const pretedentElement = e.key === 'ArrowDown' ? props.items[i+1] : props.items[i-1]
+                    if(pretedentElement) {
                         console.log('kyky')
                         props.setNameValue(pretedentElement.title)
                         break
@@ -50,7 +51,7 @@ function SelectSecret(props: SelectPropsType) {
             }
         }
 
-        if (e.key === 'Enter' || e.key === 'Escape') {
+        if(e.key === 'Enter' || e.key === 'Escape'){
             // props.setFamily(!props.pumpum)
         }
 
@@ -60,17 +61,15 @@ function SelectSecret(props: SelectPropsType) {
     return (
         <>
 
-            <div className={styles.select} onKeyUp={onKeyUp} tabIndex={0}>
+            <div className={styles.select} onKeyUp={onKeyUp} tabIndex={0} >
 
-                <h3 className={styles.main} onClick={() => props.setFamily(!props.pumpum)}>{props.value}
+                <h3 className={styles.main}  onClick={() => props.setFamily(!props.pumpum)}>{props.value}
                     <hr/>
                 </h3>
                 <div className={styles.items + '' + styles.active}>
                     {props.pumpum ? props.items.map(t => <div key={t.value}
 
-                                                              onMouseEnter={() => {
-                                                                  setHoveredElement(t.value)
-                                                              }}
+                                                              onMouseEnter={()=>{setHoveredElement(t.value)}}
                                                               className={styles.item + ' ' + (hoveredItem === t ? styles.selected : '')}
                                                               onClick={() => {
                                                                   onItemClick(t.title)

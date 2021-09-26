@@ -1,0 +1,19 @@
+.select {
+    border: 1px solid black;
+    dispaly: inline-block;
+    min-height: 40px;
+    min-width: 20px;
+    background-color: #e7fdd8;
+}
+
+ .items {
+
+     position: absolute;
+     padding:5px;
+    border: 1px black solid;
+}
+
+ .item.selected {
+    background-color: greenyellow;
+     color: white;
+ }

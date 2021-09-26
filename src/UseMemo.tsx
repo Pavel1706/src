@@ -13,7 +13,7 @@ export const DifficultCountingExample = () => {
         let tempResultA = 1;
         for (let i = 1; i <= a; i++) {
             let fake = 0
-            while (fake < 100000) {
+            while (fake < 1000) {
                 fake++;
                 const a = Math.random()
             }
@@ -58,8 +58,6 @@ export const HelpsToReactMemo = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Pavel', 'Sasha', 'Yulia', 'Kyky'])
 
-
-    // users.push('Sveta' + new Date().getTime())
 
     const newArray = useMemo(() => {
         const newArray = users.filter(u => u.toLowerCase().indexOf('a') > -1)
