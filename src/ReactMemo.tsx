@@ -21,11 +21,10 @@ export const Example1 = ()=> {
 
     const addUser = ()=> {
         const newUsers = [...users,'Sveta' + new Date().getTime() ]
-        // users.push('Sveta' + new Date().getTime())
         setUsers(newUsers)
     }
 
-    users.push('Sveta' + new Date().getTime())
+    // users.push('Sveta' + new Date().getTime())
 
     return <>
         <button onClick={()=> setCounter(counter+1) } >+</button>
