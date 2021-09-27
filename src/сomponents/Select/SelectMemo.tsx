@@ -19,6 +19,7 @@ export function SelectMemo() {
 
     return (
         <>
+            <div>0</div>
         <button onClick={push}>MY FAMILY</button>
            {family ?
         myFamily.map(t => <div key={t.id}>{t.title}</div>):''}
