@@ -41,18 +41,19 @@ export function SelectMemo() {
     },[citizens])
 
 
-const Young = (props:{myFamily: Array<myFamilyType>})=> {
-
-        return <div>{props.myFamily[0].title}</div>
+const newCounter = (props:{myFamily: Array<myFamilyType>})=> {
+        console.log('Dasha')
+        return <div>{props.myFamily[0].age}</div>
 }
 
     const newYoung = useMemo(()=> {
+        console.log('lenta')
         const newYoung = myFamily.filter(t=> t.age>30)
         return newYoung
     },[myFamily])
 
 
-    // const Young = React.memo(newYoung)
+    const Young = React.memo(newCounter)
     const newNum = useMemo( ()=> {
         console.log('age')
 
@@ -74,8 +75,9 @@ const Young = (props:{myFamily: Array<myFamilyType>})=> {
     return (
         <>
            <Family citizens={newArray}/>
-            <Young myFamily={newYoung}/>
-<div>{citizens}</div>
+            <Young myFamily={newNum}/>
+
+            <div>{citizens}</div>
             <div onClick={()=>newNum}>{newNum.map(t=>t.age<30)}</div>
         <button onClick={push}>MY FAMILY</button>
         <button onClick={()=> setCounter(counter+1)}>Counter</button>{counter}
