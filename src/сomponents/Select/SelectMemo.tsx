@@ -34,13 +34,25 @@ export function SelectMemo() {
     let [citizens, setCitizens]= useState(['Dashka', 'Yulya', 'Romka'])
 
     const newArray = useMemo( ()=> {
-
+            console.log('new')
         const newArray = citizens.filter(t => t ==='Dashka')
         return newArray
+
     },[citizens])
 
 
+const Young = (props:{myFamily: Array<myFamilyType>})=> {
 
+        return <div>{props.myFamily[0].title}</div>
+}
+
+    const newYoung = useMemo(()=> {
+        const newYoung = myFamily.filter(t=> t.age>30)
+        return newYoung
+    },[myFamily])
+
+
+    // const Young = React.memo(newYoung)
     const newNum = useMemo( ()=> {
         console.log('age')
 
@@ -53,7 +65,6 @@ export function SelectMemo() {
         setFamily(!family)
     }
     const addUser = () => {
-
         const newFamily = [...citizens, 'Pavel']
         setCitizens(newFamily)
 
@@ -63,7 +74,7 @@ export function SelectMemo() {
     return (
         <>
            <Family citizens={newArray}/>
-            {/*<Young citizens={}/>*/}
+            <Young myFamily={newYoung}/>
 <div>{citizens}</div>
             <div onClick={()=>newNum}>{newNum.map(t=>t.age<30)}</div>
         <button onClick={push}>MY FAMILY</button>
