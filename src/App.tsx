@@ -2,12 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './сomponents/Rating/Rating'
 import {Uncontrolledaccordion} from "./сomponents/Uncontrolledaccordion/Uncontrolledaccordion";
-import {UncontrolledRating} from "./сomponents/UncontrolledRatting/UncontrolledRating";
 import {UncontrolledOn_Off} from './сomponents/UncontrolledOn/UnControlledOn_Off'
 import { Accordion} from "./сomponents/accordion/Accordion";
 import {Select} from "./сomponents/Select/Select";
-import {Example1} from "./ReactMemo";
-import {DifficultCountingExample, HelpsToReactMemo} from "./UseMemo";
+import { LikeUseCallback} from "./UseMemoUseCallBack";
 import {SelectMemo} from "./сomponents/Select/SelectMemo";
 
 
@@ -52,6 +50,7 @@ export function App() {
             {/*<DifficultCountingExample/>*/}
             {/*<HelpsToReactMemo/>*/}
             <SelectMemo />
+           <LikeUseCallback/>
         </div>
     )
 }
