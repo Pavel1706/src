@@ -7,6 +7,7 @@ import { Accordion} from "./сomponents/accordion/Accordion";
 import {Select} from "./сomponents/Select/Select";
 import { LikeUseCallback} from "./UseMemoUseCallBack";
 import {SelectMemo} from "./сomponents/Select/SelectMemo";
+import {Example2} from "./UseState";
 
 
 export function App() {
@@ -51,6 +52,7 @@ export function App() {
             {/*<HelpsToReactMemo/>*/}
             <SelectMemo />
            <LikeUseCallback/>
+            <Example2/>
         </div>
     )
 }
