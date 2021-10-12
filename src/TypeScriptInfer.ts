@@ -77,6 +77,7 @@ const actions = {
 }
 
 
+
 // const action1: AC1Type = {type: "SET-AGE", age:25}
 
 type HipHop<T> = T extends 'user' ? UserType :
