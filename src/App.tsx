@@ -8,7 +8,8 @@ import {Select} from "./сomponents/Select/Select";
 import { LikeUseCallback} from "./UseMemoUseCallBack";
 import {SelectMemo} from "./сomponents/Select/SelectMemo";
 import {Example2} from "./UseState";
-import {SimpleExample} from "./UseEffect";
+import {SetTimeOutExample, } from "./UseEffect";
+import {Clock} from "./сomponents/Clock/Clock";
 
 
 export function App() {
@@ -54,7 +55,9 @@ export function App() {
             <SelectMemo />
            <LikeUseCallback/>
             <Example2/>
-            <SimpleExample/>
+            {/*<SimpleExample/>*/}
+            <SetTimeOutExample/>
+            <Clock/>
         </div>
     )
 }
