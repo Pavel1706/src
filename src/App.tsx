@@ -9,7 +9,8 @@ import { LikeUseCallback} from "./UseMemoUseCallBack";
 import {SelectMemo} from "./сomponents/Select/SelectMemo";
 import {Example2} from "./UseState";
 import {SetTimeOutExample, } from "./UseEffect";
-import {Clock} from "./сomponents/Clock/Clock";
+import { ClockDigital} from "./сomponents/Clock/ClockDigital";
+import {ClockAnalog} from "./сomponents/Clock/AnalogClock";
 
 
 export function App() {
@@ -21,6 +22,7 @@ export function App() {
     let [on, setOn] = useState<SetOnType>(false)
     let [family, setFamily] = useState<boolean>(false)
     let [nameValue, setNameValue] = useState<string | null>('My family')
+    const [date, setDate] = useState<Date>()
 
 
 
@@ -56,8 +58,10 @@ export function App() {
            <LikeUseCallback/>
             <Example2/>
             {/*<SimpleExample/>*/}
-            <SetTimeOutExample/>
-            <Clock/>
+            {/*<SetTimeOutExample/>*/}
+            <ClockDigital />
+
+
         </div>
     )
 }
